@@ -1,13 +1,22 @@
 {
   "name": "react",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Test Lead dev - Keyros",
   "keywords": [],
   "main": "src/index.tsx",
   "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-keywords": "^5.1.0",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "date-fns": "^4.1.0",
+    "express": "^4.21.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-scripts": "^5.0.0"
+    "react-google-charts": "^5.2.1",
+    "react-scripts": "^5.0.0",
+    "react-select": "^5.9.0",
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
     "@types/react": "19.0.0",
@@ -21,5 +30,12 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"]
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "author": "",
+  "license": "ISC"
 }

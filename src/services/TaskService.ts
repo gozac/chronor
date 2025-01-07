@@ -63,7 +63,40 @@ const tasks: Task[] = [
   },
 ];
 
-const getTasks = async (): Promise<Task[]> => {
+const API_URL = "http://localhost:5000/tasks";
+
+export const TaskService = {
+  list: async () => {
+    const response = await fetch(API_URL);
+    return response.json();
+  },
+
+  post: async (task) => {
+    const response = await fetch(API_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(task),
+    });
+    return response.json();
+  },
+
+  put: async (id, task) => {
+    const response = await fetch(`${API_URL}/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(task),
+    });
+    return response.json();
+  },
+
+  delete: async (id) => {
+    const response = await fetch(`${API_URL}/${id}`, { method: "DELETE" });
+    return response.json();
+  },
+};
+
+
+/*const getTasks = async (): Promise<Task[]> => {
   return Promise.resolve([...tasks]);
 };
 
@@ -97,4 +130,4 @@ export const TaskService = {
   post: createTask,
   put: updateTask,
   delete: destroyTask,
-};
+};*/
