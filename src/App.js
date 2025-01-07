@@ -64,7 +64,7 @@ export default function App() {
 	  <GanttChart tasks={filteredTasks} users={users} conflicts={conflicts} />
       <TaskList
 		tasks={filteredTasks}
-		onTasksUpdated={(updatedTasks) => setTasks(updatedTasks)}
+		onTasksUpdated={() => TaskService.list().then(setTasks)}
 		onTaskDeleted={(taskId) =>
 		  setTasks(tasks.filter((task) => task.id !== taskId))
 		}

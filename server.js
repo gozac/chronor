@@ -63,7 +63,6 @@ app.put("/tasks/:id", (req, res) => {
 // Supprimer une tâche
 app.delete("/tasks/:id", (req, res) => {
   const { id } = req.params;
-  console.log("delete task " + id);
 
   db.run("DELETE FROM tasks WHERE id = ?", id, function (err) {
     if (err) {

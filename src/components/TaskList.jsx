@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { TaskService } from "../services/TaskService.ts";
 import TaskForm from "./TaskForm";
 
 export default function TaskList({ tasks, onTasksUpdated, onTaskDeleted, conflicts }) {
   const [editingTask, setEditingTask] = useState(null);
 
   const handleDelete = async (taskId) => {
+    const res = await TaskService.delete(taskId);
     onTaskDeleted(taskId);
   };
 

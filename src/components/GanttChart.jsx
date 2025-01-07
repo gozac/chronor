@@ -3,13 +3,13 @@ import { Chart } from "react-google-charts";
 
 export default function GanttChart({ tasks, users, conflicts }) {
 
-  const formatDate = (date) => {
-    const d = new Date(date);
-    const day = String(d.getDate()).padStart(2, "0");
-    const month = String(d.getMonth() + 1).padStart(2, "0"); // Les mois commencent à 0
-    const year = d.getFullYear();
-    return `${day}/${month}/${year}`;
-  };
+  if (tasks.length === 0) {
+    return (
+      <div style={{ marginTop: "2rem" }}>
+        <h3>No task</h3>
+      </div>
+    );
+  }
 
   // Prépare les données pour le diagramme de Gantt
   const data = [

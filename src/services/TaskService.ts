@@ -91,6 +91,7 @@ export const TaskService = {
 
   delete: async (id) => {
     const response = await fetch(`${API_URL}/${id}`, { method: "DELETE" });
+    console.log("yoooo");
     return response.json();
   },
 };
